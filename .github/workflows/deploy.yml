@@ -17,13 +17,9 @@ jobs:
     - name: Login to registry
       run: echo ${{ secrets.HUB_PASSWORD }} | docker login docker.pkg.github.com -u ${{ secrets.HUB_USERNAME }} --password-stdin
 
-    - name: Get the version
-      id: vars
-      run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
-
     - name: Build the tagged Docker image
-      run: docker build . --file Dockerfile --tag docker.pkg.github.com/f9uf/go-cicd/goimage:${{ steps.vars.outputs.tag }}
+      run: docker build . --file Dockerfile --tag docker.pkg.github.com/f9uf/go-cicd/goimage:latest
 
     - name: Push image to registry
-      run: docker push docker.pkg.github.com/f9uf/go-cicd/goimage:${{ steps.vars.outputs.tag }}
+      run: docker push docker.pkg.github.com/f9uf/go-cicd/goimage:latest
 
