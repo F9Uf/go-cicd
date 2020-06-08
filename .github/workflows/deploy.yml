@@ -17,9 +17,9 @@ jobs:
     - name: Docker build and push to github registry
       uses: opspresso/action-docker@master
       env:
-        USERNAME: ${{ secrets.HUB_USERNAME }}
+        USERNAME: "f9uf"
         PASSWORD: ${{ secrets.HUB_PASSWORD }}
-        REGISTRY: ${{ secrets.REGISTRY }}
+        REGISTRY: "docker.pkg.github.com"
         IMAGE_NAME: "goimage"
         TAG_NAME: "v0.0.1"
         LATEST: "true"
