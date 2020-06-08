@@ -12,5 +12,5 @@ func main() {
 		return c.String(http.StatusOK, "hello go")
 	})
 
-	e.Logger.Fatal(e.Start(":8080"))
+	e.Logger.Fatal(e.Start(":1234"))
 }
