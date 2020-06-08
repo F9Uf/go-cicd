@@ -1,0 +1,26 @@
+name: Go
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Check out code into the Go module directory
+      uses: actions/checkout@v2
+
+    - name: Docker build and push to github registry
+      uses: opspresso/action-docker@master
+      env:
+        USERNAME: ${{ secrets.HUB_USERNAME }}
+        PASSWORD: ${{ secrets.HUB_PASSWORD }}
+        REGISTRY: ${{ secrets.REGISTRY }}
+        IMAGE_NAME: ${{ secrets.REPO }}
+        TAG_NAME: "${{ secrets.IMAGE_NAME }}"
+        LATEST: "false"
+        DOCKERFILE: "Dockerfile"
