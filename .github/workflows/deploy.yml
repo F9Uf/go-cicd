@@ -20,7 +20,7 @@ jobs:
         USERNAME: ${{ secrets.HUB_USERNAME }}
         PASSWORD: ${{ secrets.HUB_PASSWORD }}
         REGISTRY: ${{ secrets.REGISTRY }}
-        IMAGE_NAME: ${{ secrets.REPO }}
-        TAG_NAME: "${{ secrets.IMAGE_NAME }}"
-        LATEST: "false"
+        IMAGE_NAME: "go-cicd"
+        TAG_NAME: "v0.0.1"
+        LATEST: "true"
         DOCKERFILE: "Dockerfile"
