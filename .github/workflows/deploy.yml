@@ -15,10 +15,9 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Docker build and push to github registry
-      uses: docker/build-push-action@v1
+      uses: mr-smithers-excellent/docker-build-push@v3
       env:
         username: ${{ secrets.HUB_USERNAME }}
         password: ${{ secrets.HUB_PASSWORD }}
+        image: f9uf/go-cicd
         registry: docker.pkg.github.com
-        repository: f9uf/go-cicd
-        tags: latest
