@@ -15,12 +15,10 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Docker build and push to github registry
-      uses: opspresso/action-docker@master
+      uses: docker/build-push-action@v1
       env:
-        USERNAME: "f9uf"
-        PASSWORD: ${{ secrets.HUB_PASSWORD }}
-        REGISTRY: "docker.pkg.github.com"
-        IMAGE_NAME: "goimage"
-        TAG_NAME: "v0.0.1"
-        LATEST: "true"
-        DOCKERFILE: "Dockerfile"
+        username: ${{ secrets.HUB_USERNAME }}
+        password: ${{ secrets.HUB_PASSWORD }}
+        registry: docker.pkg.github.com
+        repository: f9uf/go-cicd
+        tags: latest
