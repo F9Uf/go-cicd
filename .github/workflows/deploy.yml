@@ -17,7 +17,7 @@ jobs:
     - name: Docker build and push to github registry
       uses: mr-smithers-excellent/docker-build-push@v3
       env:
-        image: f9uf/go-cicd/goimage
+        image: go-cicd
         username: ${{ secrets.HUB_USERNAME }}
         password: ${{ secrets.HUB_PASSWORD }}
         registry: docker.pkg.github.com
