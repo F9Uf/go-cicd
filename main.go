@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	"go-cicd/todos"
+	"go-cicd/api/todos"
 
 	"github.com/labstack/echo"
 )
